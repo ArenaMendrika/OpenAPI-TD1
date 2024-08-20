@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: STD23034 - TD1
+  version: 1.0.0
+servers:
+  - url: https://localhost.std23034.com
+paths:
+  /customers:
+    get:
+      summary: A list of customers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+components:
+  schemas:
+    Customers:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        age:
+          type: integer
