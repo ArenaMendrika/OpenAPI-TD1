@@ -2,6 +2,10 @@ openapi: 3.0.3
 info:
   title: STD23034 - TD1
   version: 1.0.0
+  description: This API provides customer data.
+  contact:
+    name: API Support
+    email: arena@std23034.com
 servers:
   - url: https://localhost.std23034.com
 paths:
