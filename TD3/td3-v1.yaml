@@ -5,7 +5,7 @@ info:
 servers:
   - url: https://localhost.std23034.com
 paths:
-  /meal:
+  /meals:
     get:
       parameters:
         - in: query
@@ -99,4 +99,4 @@ components:
           type: string
         price:
           type: number
-          format: float
+          format: double
