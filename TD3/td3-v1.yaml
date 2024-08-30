@@ -1,11 +1,11 @@
 openapi: 3.0.3
 info:
   title: STD23034 - TD3
-  version: '1.0.2'
+  version: '1.0.3'
 servers:
   - url: https://localhost.std23034.com
 paths:
-  /meals:
+  /meal:
     get:
       parameters:
         - in: query
@@ -34,13 +34,7 @@ paths:
             schema:
               type: array
               items:
-                type: object
-                properties:
-                  name:
-                    type: string
-                  price:
-                    type: number
-                    format: double
+                $ref: '#/components/schemas/CreateMeal'
         required: true
       responses:
         200:
@@ -90,17 +84,19 @@ paths:
 components:
   schemas:
     Meal:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        price:
-          type: number
-          format: double
+      allOf:
+        - $ref: '#/components/schemas/MealIdentifier'
+        - $ref: '#/components/schemas/CreateMeal'
     MealIdentifier:
       type: object
       properties:
         id:
           type: string
+    CreateMeal:
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+          format: float
