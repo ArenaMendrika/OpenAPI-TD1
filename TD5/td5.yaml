@@ -1,9 +1,9 @@
 openapi: 3.0.3
 info:
-  title: STD23000 - TD2
+  title: STD23034 - TD5
   version: '1.0.5'
 servers:
-  - url: https://localhost.std230xxx.com
+  - url: https://localhost.std23034.com
 paths:
   /customers:
     put:
